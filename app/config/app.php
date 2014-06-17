@@ -123,6 +123,15 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+        'Cartalyst\Sentry\SentryServiceProvider',
+        'Greggilbert\Recaptcha\RecaptchaServiceProvider',
+        'Bitw\Larauth\LarauthServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
+        'PragmaRX\Tracker\Vendor\Laravel\ServiceProvider',
+        'Teepluss\Theme\ThemeServiceProvider',
+        'Pingpong\Modules\ModulesServiceProvider',
+
 
 	),
 
@@ -191,6 +200,11 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
         'Debugbar'        => 'Barryvdh\Debugbar\Facade',
+        'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+        'Image'           => 'Intervention\Image\Facades\Image',
+        'Theme'           => 'Teepluss\Theme\Facades\Theme',
+        'Module'          => 'Pingpong\Modules\Facades\Module',
+
 
 
 	),
