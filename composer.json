@@ -5,15 +5,15 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "barryvdh/laravel-debugbar": "1.*",
-        "barryvdh/laravel-ide-helper": "1.*",
-        "cartalyst/sentry": "2.1.*",
-        "bitw/larauth": "1.0.*@dev",
-        "way/generators": "2.*",
-        "intervention/image": "2.*",
-        "pragmarx/tracker": "0.4.*",
-        "teepluss/theme": "dev-master",
-        "pingpong/modules": "1.0.*"
+		"barryvdh/laravel-debugbar": "1.*",
+		"barryvdh/laravel-ide-helper": "1.*",
+		"cartalyst/sentry": "2.1.*",
+		"bitw/larauth": "1.0.*@dev",
+		"way/generators": "2.*",
+		"intervention/image": "2.*",
+		"pragmarx/tracker": "0.4.*",
+		"teepluss/theme": "dev-master",
+		"pingpong/modules": "1.0.*"
     },
 	"autoload": {
 		"classmap": [
