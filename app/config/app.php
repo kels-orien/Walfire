@@ -124,6 +124,7 @@ return array(
 
 
         // WalFire providers
+		'Creolab\LaravelModules\ServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
@@ -132,7 +133,6 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Teepluss\Theme\ThemeServiceProvider',
-        'Pingpong\Modules\ModulesServiceProvider'
 
 
 	),
@@ -207,7 +207,6 @@ return array(
         'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
         'Image'           => 'Intervention\Image\Facades\Image',
         'Theme'           => 'Teepluss\Theme\Facades\Theme',
-        'Module'          => 'Pingpong\Modules\Facades\Module',
 
 
 

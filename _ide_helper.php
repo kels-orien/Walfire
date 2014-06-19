@@ -8488,12 +8488,12 @@ namespace {
 		 * @param string|array  $view
 		 * @param array  $data
 		 * @param Closure|string  $callback
-		 * @return int
+		 * @return void
 		 * @static 
 		 */
 		 public static function send($view, $data, $callback){
 			//Method inherited from \Illuminate\Mail\Mailer
-			return \Illuminate\Mail\Mailer::send($view, $data, $callback);
+			 \Illuminate\Mail\Mailer::send($view, $data, $callback);
 		 }
 
 		/**
@@ -8581,6 +8581,17 @@ namespace {
 		 public static function pretend($value = true){
 			//Method inherited from \Illuminate\Mail\Mailer
 			 \Illuminate\Mail\Mailer::pretend($value);
+		 }
+
+		/**
+		 * Check if the mailer is pretending to send messages.
+		 *
+		 * @return bool
+		 * @static 
+		 */
+		 public static function isPretending(){
+			//Method inherited from \Illuminate\Mail\Mailer
+			return \Illuminate\Mail\Mailer::isPretending();
 		 }
 
 		/**
@@ -14130,6 +14141,693 @@ namespace {
 		 public static function __call($method, $parameters){
 			//Method inherited from \Cartalyst\Sentry\Sentry
 			return \Cartalyst\Sentry\Sentry::__call($method, $parameters);
+		 }
+
+	}
+	class Image extends \Intervention\Image\Facades\Image{
+		/**
+		 * Creates new instance of Image Manager
+		 *
+		 * @param Illuminate\Config\Repository $config
+		 * @static 
+		 */
+		 public static function __construct($config = null){
+			//Method inherited from \Intervention\Image\ImageManager
+			 \Intervention\Image\ImageManager::__construct($config);
+		 }
+
+		/**
+		 * Initiates an Image instance from different input types
+		 *
+		 * @param mixed $data
+		 * @return Intervention\Image\Image
+		 * @static 
+		 */
+		 public static function make($data){
+			//Method inherited from \Intervention\Image\ImageManager
+			return \Intervention\Image\ImageManager::make($data);
+		 }
+
+		/**
+		 * Creates an empty image canvas
+		 *
+		 * @param integer $width
+		 * @param integer $height
+		 * @param mixed $background
+		 * @return Intervention\Image\Image
+		 * @static 
+		 */
+		 public static function canvas($width, $height, $background = null){
+			//Method inherited from \Intervention\Image\ImageManager
+			return \Intervention\Image\ImageManager::canvas($width, $height, $background);
+		 }
+
+		/**
+		 * Create new cached image and run callback
+		 * (requires additional package intervention/imagecache)
+		 *
+		 * @param Closure $callback
+		 * @param integer $lifetime
+		 * @param boolean $returnObj
+		 * @return Image
+		 * @static 
+		 */
+		 public static function cache($callback, $lifetime = null, $returnObj = false){
+			//Method inherited from \Intervention\Image\ImageManager
+			return \Intervention\Image\ImageManager::cache($callback, $lifetime, $returnObj);
+		 }
+
+	}
+	class Theme extends \Teepluss\Theme\Facades\Theme{
+		/**
+		 * Create a new theme instance.
+		 *
+		 * @param \Illuminate\Config\Repository $config
+		 * @param \Illuminate\Events\Dispatcher $events
+		 * @param \Illuminate\View\Factory $view |
+		 * @param \Teepluss\Theme\asset $asset
+		 * @param \Illuminate\Filesystem\Filesystem $files
+		 * @param \Teepluss\Breadcrumb|\Teepluss\Theme\Breadcrumb $breadcrumb
+		 * @return \Teepluss\Theme\Theme
+		 * @static 
+		 */
+		 public static function __construct($config, $events, $view, $asset, $files, $breadcrumb){
+			//Method inherited from \Teepluss\Theme\Theme
+			 \Teepluss\Theme\Theme::__construct($config, $events, $view, $asset, $files, $breadcrumb);
+		 }
+
+		/**
+		 * Get current theme name.
+		 *
+		 * @return string
+		 * @static 
+		 */
+		 public static function getThemeName(){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getThemeName();
+		 }
+
+		/**
+		 * Get current layout name.
+		 *
+		 * @return string
+		 * @static 
+		 */
+		 public static function getLayoutName(){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getLayoutName();
+		 }
+
+		/**
+		 * Get theme namespace.
+		 *
+		 * @param string $path
+		 * @return string
+		 * @static 
+		 */
+		 public static function getThemeNamespace($path = ''){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getThemeNamespace($path);
+		 }
+
+		/**
+		 * Check theme exists.
+		 *
+		 * @param string  $theme
+		 * @return boolean
+		 * @static 
+		 */
+		 public static function exists($theme){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::exists($theme);
+		 }
+
+		/**
+		 * Link to another view.
+		 * 
+		 * <code>
+		 * 		// Look up view from another view in the same place.
+		 * 		Theme::symlink('another')
+		 * </code>
+		 *
+		 * @param string $theme
+		 * @return string
+		 * @static 
+		 */
+		 public static function symlink($theme){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::symlink($theme);
+		 }
+
+		/**
+		 * Symlink with inherit.
+		 * 
+		 * This method is the same symlink, but try to find inherit,
+		 * from config.
+		 *
+		 * @param string $theme
+		 * @return string
+		 * @static 
+		 */
+		 public static function symlinkWithFindInherit($theme){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::symlinkWithFindInherit($theme);
+		 }
+
+		/**
+		 * Get theme config.
+		 *
+		 * @param string $key
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function getConfig($key = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getConfig($key);
+		 }
+
+		/**
+		 * Fire event to config listener.
+		 *
+		 * @param string $event
+		 * @param mixed  $args
+		 * @return void
+		 * @static 
+		 */
+		 public static function fire($event, $args){
+			//Method inherited from \Teepluss\Theme\Theme
+			 \Teepluss\Theme\Theme::fire($event, $args);
+		 }
+
+		/**
+		 * Set up a theme name.
+		 *
+		 * @param string $theme
+		 * @throws UnknownThemeException
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function theme($theme = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::theme($theme);
+		 }
+
+		/**
+		 * Alias of theme method.
+		 *
+		 * @param string $theme
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function uses($theme = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::uses($theme);
+		 }
+
+		/**
+		 * Set up a layout name.
+		 *
+		 * @param string $layout
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function layout($layout){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::layout($layout);
+		 }
+
+		/**
+		 * Get theme path.
+		 *
+		 * @param string $forceThemeName
+		 * @return string
+		 * @static 
+		 */
+		 public static function path($forceThemeName = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::path($forceThemeName);
+		 }
+
+		/**
+		 * Set a place to regions.
+		 *
+		 * @param string $region
+		 * @param string $value
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function set($region, $value){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::set($region, $value);
+		 }
+
+		/**
+		 * Append a place to existing region.
+		 *
+		 * @param string $region
+		 * @param string $value
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function append($region, $value){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::append($region, $value);
+		 }
+
+		/**
+		 * Prepend a place to existing region.
+		 *
+		 * @param string $region
+		 * @param string $value
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function prepend($region, $value){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::prepend($region, $value);
+		 }
+
+		/**
+		 * Binding data to view.
+		 *
+		 * @param string $variable
+		 * @param mixed  $callback
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function bind($variable, $callback = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::bind($variable, $callback);
+		 }
+
+		/**
+		 * Check having binded data.
+		 *
+		 * @param string $variable
+		 * @return boolean
+		 * @static 
+		 */
+		 public static function binded($variable){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::binded($variable);
+		 }
+
+		/**
+		 * Assign data across all views.
+		 *
+		 * @param mixed $key
+		 * @param mixed $value
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function share($key, $value){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::share($key, $value);
+		 }
+
+		/**
+		 * Set up a partial.
+		 *
+		 * @param string $view
+		 * @param array $args
+		 * @throws UnknownPartialFileException
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function partial($view, $args = array()){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::partial($view, $args);
+		 }
+
+		/**
+		 * Widget instance.
+		 *
+		 * @param string $className
+		 * @param array $attributes
+		 * @throws UnknownWidgetClassException
+		 * @return Teepluss\Theme\Widget
+		 * @static 
+		 */
+		 public static function widget($className, $attributes = array()){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::widget($className, $attributes);
+		 }
+
+		/**
+		 * Hook a partial before rendering.
+		 *
+		 * @param mixed   $view
+		 * @param closure $callback
+		 * @return void
+		 * @static 
+		 */
+		 public static function partialComposer($view, $callback){
+			//Method inherited from \Teepluss\Theme\Theme
+			 \Teepluss\Theme\Theme::partialComposer($view, $callback);
+		 }
+
+		/**
+		 * Get compiler.
+		 *
+		 * @param string $compiler
+		 * @return object
+		 * @static 
+		 */
+		 public static function getCompiler($compiler){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getCompiler($compiler);
+		 }
+
+		/**
+		 * Parses and compiles strings by using blade template system.
+		 *
+		 * @param string $str
+		 * @param array $data
+		 * @param boolean $phpCompile
+		 * @throws \Exception
+		 * @return string
+		 * @static 
+		 */
+		 public static function blader($str, $data = array(), $phpCompile = true){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::blader($str, $data, $phpCompile);
+		 }
+
+		/**
+		 * Compile blade without PHP.
+		 *
+		 * @param string $str
+		 * @param array  $data
+		 * @return string
+		 * @static 
+		 */
+		 public static function bladerWithOutServerScript($str, $data = array()){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::bladerWithOutServerScript($str, $data);
+		 }
+
+		/**
+		 * Compile twig.
+		 *
+		 * @param string $str
+		 * @param array  $data
+		 * @return string
+		 * @static 
+		 */
+		 public static function twigy($str, $data = array()){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::twigy($str, $data);
+		 }
+
+		/**
+		 * Check region exists.
+		 *
+		 * @param string  $region
+		 * @return boolean
+		 * @static 
+		 */
+		 public static function has($region){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::has($region);
+		 }
+
+		/**
+		 * Render a region.
+		 *
+		 * @param string $region
+		 * @param mixed  $default
+		 * @return string
+		 * @static 
+		 */
+		 public static function get($region, $default = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::get($region, $default);
+		 }
+
+		/**
+		 * Render a region.
+		 *
+		 * @param string $region
+		 * @param mixed  $default
+		 * @return string
+		 * @static 
+		 */
+		 public static function place($region, $default = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::place($region, $default);
+		 }
+
+		/**
+		 * Place content in sub-view.
+		 *
+		 * @return string
+		 * @static 
+		 */
+		 public static function content(){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::content();
+		 }
+
+		/**
+		 * Return asset instance.
+		 *
+		 * @return \Teepluss\Theme\Asset
+		 * @static 
+		 */
+		 public static function asset(){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::asset();
+		 }
+
+		/**
+		 * Return breadcrumb instance.
+		 *
+		 * @return \Teepluss\Theme\Breadcrumb
+		 * @static 
+		 */
+		 public static function breadcrumb(){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::breadcrumb();
+		 }
+
+		/**
+		 * Set up a content to template.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function of($view, $args = array(), $type = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::of($view, $args, $type);
+		 }
+
+		/**
+		 * The same as "of", but having prefix layout.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function ofWithLayout($view, $args = array(), $type = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::ofWithLayout($view, $args, $type);
+		 }
+
+		/**
+		 * Container view.
+		 * 
+		 * Using a container module view inside a theme, this is
+		 * useful when you separate a view inside a theme.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function scope($view, $args = array(), $type = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::scope($view, $args, $type);
+		 }
+
+		/**
+		 * The same as "scope", but having prefix layout.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function scopeWithLayout($view, $args = array(), $type = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::scopeWithLayout($view, $args, $type);
+		 }
+
+		/**
+		 * Load subview from direct path.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function load($view, $args = array()){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::load($view, $args);
+		 }
+
+		/**
+		 * Watch view file in anywhere.
+		 * 
+		 * Finding from scope first, then try to find from application view.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function watch($view, $args = array(), $type = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::watch($view, $args, $type);
+		 }
+
+		/**
+		 * The same as "watch", but having prefix layout.
+		 * 
+		 * Finding from scope first, then try to find from application view.
+		 *
+		 * @param string $view
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function watchWithLayout($view, $args = array(), $type = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::watchWithLayout($view, $args, $type);
+		 }
+
+		/**
+		 * Get all arguments assigned to content.
+		 *
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function getContentArguments(){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getContentArguments();
+		 }
+
+		/**
+		 * Get a argument assigned to content.
+		 *
+		 * @param string $key
+		 * @param null $default
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function getContentArgument($key, $default = null){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::getContentArgument($key, $default);
+		 }
+
+		/**
+		 * Checking content argument existing.
+		 *
+		 * @param string  $key
+		 * @return boolean
+		 * @static 
+		 */
+		 public static function hasContentArgument($key){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::hasContentArgument($key);
+		 }
+
+		/**
+		 * Find view location.
+		 *
+		 * @param boolean $realpath
+		 * @return string
+		 * @static 
+		 */
+		 public static function location($realpath = false){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::location($realpath);
+		 }
+
+		/**
+		 * It's similar to location, but will look up from both
+		 * application's view and theme's view.
+		 * 
+		 * ex. Theme::which('general.welcome');
+		 *
+		 * @param string  $view
+		 * @param boolean $realpath
+		 * @return string
+		 * @static 
+		 */
+		 public static function which($view, $realpath = false){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::which($view, $realpath);
+		 }
+
+		/**
+		 * Compile from string.
+		 *
+		 * @param string $str
+		 * @param array  $args
+		 * @param string $type
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function string($str, $args = array(), $type = 'blade'){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::string($str, $args, $type);
+		 }
+
+		/**
+		 * Set cookie to response.
+		 *
+		 * @param Cookie $cookie
+		 * @return Theme
+		 * @static 
+		 */
+		 public static function withCookie($cookie){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::withCookie($cookie);
+		 }
+
+		/**
+		 * Return a template with content.
+		 *
+		 * @param integer $statusCode
+		 * @throws UnknownLayoutFileException
+		 * @return Response
+		 * @static 
+		 */
+		 public static function render($statusCode = 200){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::render($statusCode);
+		 }
+
+		/**
+		 * Magic method for set, prepend, append, has, get.
+		 *
+		 * @param string $method
+		 * @param array  $parameters
+		 * @return mixed
+		 * @static 
+		 */
+		 public static function __call($method, $parameters = array()){
+			//Method inherited from \Teepluss\Theme\Theme
+			return \Teepluss\Theme\Theme::__call($method, $parameters);
 		 }
 
 	}
