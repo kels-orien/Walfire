@@ -121,6 +121,9 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+
+
+        // WalFire providers
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
@@ -199,6 +202,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+
+        // Walfire aliases
         'Debugbar'        => 'Barryvdh\Debugbar\Facade',
         'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
         'Image'           => 'Intervention\Image\Facades\Image',
