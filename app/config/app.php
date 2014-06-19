@@ -131,9 +131,8 @@ return array(
         'Bitw\Larauth\LarauthServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'PragmaRX\Tracker\Vendor\Laravel\ServiceProvider',
         'Teepluss\Theme\ThemeServiceProvider',
-        'Pingpong\Modules\ModulesServiceProvider',
+        'Pingpong\Modules\ModulesServiceProvider'
 
 
 	),
