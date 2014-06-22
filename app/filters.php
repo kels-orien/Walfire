@@ -35,17 +35,39 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
-			return Redirect::guest('logon');
-		}
-	}
+    if (!Sentry::check())
+    {
+        if (Request::ajax())
+        {
+            return Response::make('Unauthorized', 401);
+        }
+        else
+        {
+            return Redirect::guest('logon');
+        }
+    }
+});
+
+Route::filter('authAdmin', function()
+{
+    if (!Sentry::check())
+    {
+        if (Request::ajax())
+        {
+            return Response::make('Unauthorized', 401);
+        }
+        else
+        {
+            return Redirect::guest('logon');
+        }
+    }
+    else {
+        $user = Sentry::findUserByID(Sentry::getUser()->id);
+        if (!$user->hasAccess('admin') || !$user->hasAccess('developer'))
+        {
+            return Redirect::guest('logon');
+        }
+    }
 });
 
 
