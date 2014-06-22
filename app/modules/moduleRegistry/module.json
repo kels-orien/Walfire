@@ -1,6 +1,6 @@
 {
 	"enabled":  true,
 	"provider": [
-		"App\\Modules\\ModuleRegistry\\ModuleRegistryServiceProvider"
+        "App\\Modules\\ModuleRegistry\\ModuleRegistryServiceProvider"
 	]
 }
