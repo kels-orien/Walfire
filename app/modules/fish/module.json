@@ -1,3 +1,6 @@
 {
-	"enabled": true
+	"enabled": true,
+    "provider": [
+        "App\\Modules\\Fish\\AnotherServiceProvider"
+    ]
 }
