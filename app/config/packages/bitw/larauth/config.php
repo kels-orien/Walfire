@@ -24,9 +24,9 @@ return array(
     ],
 
     'registration' => array(
-        'captcha_protect' => true,
+        'captcha_protect' => false,
         'generate_password' => false,
-        'require_activation' => true,
+        'require_activation' => false,
         'min_password' => 6,
     ),
 

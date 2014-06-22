@@ -13,5 +13,22 @@
 
 Route::get('/', function()
 {
-    dd(ModuleRegistry::getAdminModule());
+    echo '=)';
+});
+
+Route::group(array('prefix' => 'admin','before' => 'auth'), function()
+{
+    $getAdminModule = ModuleRegistry::getAdminModule();
+    Route::get('/', function()
+    {
+
+    });
+
+    Route::group(array('prefix' => 'settings'), function()
+    {
+        Route::get('/', function()
+        {
+
+        });
+    });
 });
