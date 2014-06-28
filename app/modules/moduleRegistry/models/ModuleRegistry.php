@@ -6,13 +6,16 @@ class ModuleRegistry {
 
     protected static $adminModule = array();
 
-    public static function registryAdminModule($module,$facade=null) {
-        if($facade != null) $module = array($module,$facade);
-        array_push(Self::$adminModule,$module);
+    public static function registryAdminModule($module, $facade = null)
+    {
+        if ($facade != null) $module = array($module, $facade);
+        array_push(self::$adminModule, $module);
+
         return true;
     }
 
-    public static function getAdminModule() {
-        return Self::$adminModule;
+    public static function getAdminModule()
+    {
+        return self::$adminModule;
     }
 }
