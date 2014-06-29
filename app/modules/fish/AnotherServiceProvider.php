@@ -10,7 +10,7 @@ class AnotherServiceProvider extends \Illuminate\Support\ServiceProvider {
         $this->app->booting(function()
         {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            ModuleRegistry::registryAdminModule('fish');
+            //ModuleRegistry::registryAdminModule('fish');
         });
     }
 

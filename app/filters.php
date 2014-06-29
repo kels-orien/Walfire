@@ -48,7 +48,7 @@ Route::filter('auth', function()
     }
 });
 
-Route::filter('authAdmin', function()
+Route::filter('authAdministrator', function()
 {
     if (!Sentry::check())
     {
@@ -63,7 +63,7 @@ Route::filter('authAdmin', function()
     }
     else {
         $user = Sentry::findUserByID(Sentry::getUser()->id);
-        if (!$user->hasAccess('admin') || !$user->hasAccess('developer'))
+        if (!$user->hasAccess('admin') && !$user->hasAccess('developer'))
         {
             return Redirect::guest('logon');
         }

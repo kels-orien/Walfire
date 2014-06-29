@@ -8,7 +8,7 @@ class ModuleRegistryServiceProvider extends \Illuminate\Support\ServiceProvider 
         {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
             $loader->alias('ModuleRegistry', 'App\Modules\ModuleRegistry\Facades\ModuleRegistryFacade');
-            \ModuleRegistry::registryAdminModule("Module");
+            \ModuleRegistry::registryAdminModule("ModuleRegistry",'App\Modules\ModuleRegistry\Facades\ModuleRegistryFacade');
 
             // Artisan::call('dump-autoload');
         });

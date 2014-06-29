@@ -24,7 +24,7 @@
         <a class="active item">
             <i class="settings icon"></i> Settings
         </a>
-        @if (!$user->hasAccess('developer'))
+        @if ($user->hasAccess('developer'))
         <a class="item">
             <i class="doctor icon"></i> Development
         </a>
