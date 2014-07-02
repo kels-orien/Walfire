@@ -1,11 +1,24 @@
 @extends('administrator.layout')
 
 @section('content')
-    <h2>Gene</h2>
-    <h2>Active other module:</h2>
-    @foreach($modules as $module)
-        <div class="ui icon header">
-            <a href="{{ $module }}">{{ $module }}</a>
-        </div>
-    @endforeach
+<a href="/admin/magazine/orders">
+    <div class="blockMenu">
+        <span><span>Magazine settings</span></span>
+    </div>
+</a>
+<a href="/admin/magazine/orders">
+    <div class="blockMenu">
+        <span><span>Orders</span></span>
+    </div>
+</a>
+<a href="/admin/magazine/delivery">
+    <div class="blockMenu">
+        <span><span>Delivery</span></span>
+    </div>
+</a>
+<a href="/admin/magazine/delivery">
+    <div class="blockMenu">
+        <span><span>Payments</span></span>
+    </div>
+</a>
 @stop

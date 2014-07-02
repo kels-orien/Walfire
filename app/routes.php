@@ -16,13 +16,14 @@ Route::get('/', function()
     echo '=)';
 });
 
-Route::group(array('prefix' => 'admin','before' => 'authAdministrator'), function()
+Route::group(array('prefix' => 'admin', 'as' => 'admin','before' => 'authAdministrator'), function()
 {
     Route::get('/', 'AdministratorController@showDashboard');
+    Route::get('/{slug}', 'AdministratorController@showMenu');
 
-    Route::group(array('prefix' => 'settings'), function()
+    /*Route::group(array('prefix' => 'settings'), function()
     {
         Route::get('/', 'AdministratorController@showSettings');
         Route::get('/{slug}', 'AdministratorController@showSettingsSlugable');
-    });
+    });*/
 });

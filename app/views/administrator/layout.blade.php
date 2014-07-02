@@ -18,12 +18,34 @@
 <div class="container">
     <div></div>
     <div class="ui menu">
-        <a class="item">
+        @if(isset($dashboard_active) && $dashboard_active == true)
+        <a class="active item" href="/admin">
             <i class="dashboard icon"></i> Dashboard
         </a>
-        <a class="active item">
-            <i class="settings icon"></i> Settings
+        @else
+        <a class="item" href="/admin">
+            <i class="dashboard icon"></i> Dashboard
         </a>
+        @endif
+        @if(isset($magazine_active) && $magazine_active == true)
+            <a class="active item" href="/admin/magazine">
+                <i class="bolt icon"></i> Magazine
+            </a>
+        @else
+            <a class="item" href="/admin/magazine">
+                <i class="bolt icon"></i> Magazine
+            </a>
+        @endif
+
+        @if(isset($settings_active) && $settings_active == true)
+            <a class="active item" href="/admin/settings">
+                <i class="settings icon"></i> Settings
+            </a>
+        @else
+            <a class="item" href="/admin/settings">
+                <i class="settings icon"></i> Settings
+            </a>
+        @endif
         @if ($user->hasAccess('developer'))
         <a class="item">
             <i class="doctor icon"></i> Development

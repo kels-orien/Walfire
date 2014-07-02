@@ -124,7 +124,6 @@ return array(
 
 
         // WalFire providers
-		'Creolab\LaravelModules\ServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Cartalyst\Sentry\SentryServiceProvider',
