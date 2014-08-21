@@ -27,3 +27,13 @@ Route::group(array('prefix' => 'admin', 'as' => 'admin','before' => 'authAdminis
         Route::get('/{slug}', 'AdministratorController@showSettingsSlugable');
     });*/
 });
+
+Route::get('/{slug}', function($slug)
+{
+    $infoBySlug = Slugs::where('slug',$slug)->firstOrFail();
+    $serializeSlug = $infoBySlug->callMethod;
+    $unSerializeSlug = unserialize($serializeSlug);
+    $controller = App::make($unSerializeSlug['controller']);
+    $controller->callAction($unSerializeSlug['method'], $unSerializeSlug['params']);
+})->where('slug','.*');
+
